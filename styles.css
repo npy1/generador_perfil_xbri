@@ -1,0 +1,109 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #06b6d4;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: radial-gradient(1200px 600px at 30% -10%, #1f2937 0, var(--bg) 60%);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  background: rgba(17, 24, 39, 0.6);
+  border: 1px solid #1f2937;
+  border-radius: 14px;
+  padding: 12px;
+  backdrop-filter: blur(6px);
+}
+
+.file input[type="file"] {
+  display: none;
+}
+
+.file span {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #111827, #0b1220);
+  border: 1px solid #1f2937;
+  color: var(--text);
+  cursor: pointer;
+  transition: transform .06s ease;
+}
+.file span:hover { transform: translateY(-1px); }
+
+.select, .range {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: #0b1220;
+  border: 1px solid #1f2937;
+}
+
+select, input[type="range"] {
+  accent-color: var(--accent);
+}
+
+button#download {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+  background: linear-gradient(180deg, #0ea5e9, #0284c7);
+  color: white;
+  cursor: pointer;
+  transition: opacity .15s ease, transform .06s ease;
+}
+button#download:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+button#download:not(:disabled):hover { transform: translateY(-1px); }
+
+.canvas-wrap {
+  margin-top: 14px;
+  background: #0b1220;
+  border: 1px solid #1f2937;
+  border-radius: 14px;
+  padding: 12px;
+  overflow: auto;
+}
+
+#canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background: #0b1220;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
